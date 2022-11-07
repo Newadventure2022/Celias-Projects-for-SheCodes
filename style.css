@@ -1,0 +1,184 @@
+body {
+  font-family: "Fira Sans", sans-serif;
+  margin: 10px 10px;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: left;
+  font-size: 45px;
+  padding-top: 10px;
+  padding-left: 15px;
+  border-radius: 10px;
+}
+
+form {
+  font-size: 17px;
+  text-align: right;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+button {
+  background: #d4ebe6;
+  border-radius: 2px;
+  border-width: 1px;
+  color: rgb(82, 81, 81);
+  text-align: center;
+  transition: all 200ms ease;
+}
+p {
+  padding-left: 15px;
+  padding-bottom: 22px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  font-size: 15px;
+  padding-left: 0px;
+  padding-top: 5px;
+  margin-right: 16px;
+  padding-bottom: 5px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  font-size: 13px;
+  text-align: center;
+  clear: both;
+  position: relative;
+  margin-top: 200px;
+}
+
+.container {
+  border: solid 3px #e6e9f0;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 850px;
+  padding: 15px;
+}
+
+.header-border {
+  background: #eee;
+  width: 100%;
+}
+
+.cities {
+  display: inline;
+}
+
+.cities .current-city {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: left;
+  left: 0;
+  top: 20px;
+}
+
+.cities .other-locations {
+  right: 0;
+  margin-top: -30px;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.temp-main .date-heading {
+  font-size: 16px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  padding-bottom: 0;
+  padding-left: 15px;
+}
+
+.temp-main .temperature {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.temp-number {
+  font-size: 50px;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+.units {
+  font-size: 30px;
+  position: relative;
+  top: -32px;
+  text-decoration: none;
+}
+
+.temp-number2 {
+  font-size: 30px;
+}
+
+.units2 {
+  font-size: 20px;
+  position: relative;
+  top: -22px;
+}
+
+.verticalLine {
+  border-left: 2px solid;
+  border-left-color: #d5d9df;
+  padding-left: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.days {
+  background: #eee;
+  width: 100%;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-bottom: 16px;
+}
+
+.days li {
+  border-right: 1px solid #333;
+  min-width: 140px;
+}
+
+.days li:nth-last-child(1) {
+  border-right-width: 0;
+}
+
+.other-locations {
+  font-size: 15px;
+  text-align: right;
+}
+
+span.emoji1 {
+  font-size: 100px;
+  vertical-align: middle;
+}
+
+span.elements {
+  display: block;
+}
+
+span.emoji2 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.next5 {
+  background: #eee;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 8px;
+  padding-left: 0;
+  padding-left: 15px;
+}
