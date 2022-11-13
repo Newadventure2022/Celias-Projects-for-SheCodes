@@ -21,6 +21,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayWeatherCondition(response) {
+  console.log(response.data);
   let currentTemp = document.querySelector("#temperature");
   let currentLocation = document.querySelector("#current-city");
   let temperature = Math.round(response.data.main.temp);
@@ -28,13 +29,17 @@ function displayWeatherCondition(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
   currentLocation.innerHTML = `${response.data.name}`;
   currentTemp.innerHTML = `${temperature}`;
   weatherElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  console.log(response);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchLocation(position) {
@@ -67,19 +72,24 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleCity);
 
 function showTemperature(response) {
-  console.log(response);
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
   let weatherElement = document.querySelector("#weather");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   weatherElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function search(city) {
   let apiKey = "bb46c05d46c0caa623676d4d5ff608cb";
@@ -112,4 +122,4 @@ function handleCity(e) {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", celsiusTemp);
 }
-search("New York");
+search("Paris");
