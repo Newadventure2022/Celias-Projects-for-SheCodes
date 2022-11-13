@@ -1,47 +1,26 @@
-let now = new Date();
-
-let h3 = document.querySelector("h3");
-let date = now.getDate();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatDate(timestamp) {
+  console.log(timestamp);
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let seconds = now.getSeconds();
-let milliseconds = now.getMilliseconds();
-let year = now.getFullYear();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-h3.innerHTML = `${day} ${hours}:${minutes}`;
-
 function displayWeatherCondition(response) {
   let currentTemp = document.querySelector("#temperature");
   let currentLocation = document.querySelector("#current-city");
@@ -49,15 +28,16 @@ function displayWeatherCondition(response) {
   let weatherElement = document.querySelector("#weather");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
   currentLocation.innerHTML = `${response.data.name}`;
   currentTemp.innerHTML = `${temperature}`;
   weatherElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function searchLocation(position) {
-  console.log(position);
   let apiKey = "bb46c05d46c0caa623676d4d5ff608cb";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -87,17 +67,18 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleCity);
 
 function showTemperature(response) {
-  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
   let weatherElement = document.querySelector("#weather");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   weatherElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function search(city) {
   let apiKey = "bb46c05d46c0caa623676d4d5ff608cb";
