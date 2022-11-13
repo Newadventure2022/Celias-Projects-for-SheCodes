@@ -1,5 +1,4 @@
 function formatDate(timestamp) {
-  console.log(timestamp);
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -35,6 +34,7 @@ function displayWeatherCondition(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  console.log(response);
 }
 
 function searchLocation(position) {
@@ -67,6 +67,7 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleCity);
 
 function showTemperature(response) {
+  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
   let weatherElement = document.querySelector("#weather");
@@ -111,4 +112,4 @@ function handleCity(e) {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", celsiusTemp);
 }
-search("Paris");
+search("New York");
