@@ -22,7 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
   let currentTemp = document.querySelector("#temperature");
   let currentLocation = document.querySelector("#current-city");
   let temperature = Math.round(response.data.main.temp);
@@ -74,7 +73,6 @@ function search(event) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
   let weatherElement = document.querySelector("#weather");
@@ -112,7 +110,6 @@ function fahrenheitTemp(event) {
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
-
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
