@@ -110,11 +110,11 @@ footer {
 .temp-number {
   font-size: 60px;
   font-weight: 400;
-  padding-left: 5px;
+  /* padding-left: 5px; */
 }
 
 .units {
-  font-size: 30px;
+  font-size: 20px;
   position: relative;
   top: -32px;
   text-decoration: none;
@@ -140,7 +140,55 @@ footer {
   padding-left: 16px;
   font-size: 15px;
   display: inline-block;
-  margin-left: 50px;
+  margin-left: 24px;
+}
+
+.city-search {
+  position: relative;
+}
+
+input[type="search"] {
+  border-radius: 20px;
+  height: 40px;
+  padding-left: 16px;
+  border-width: 0;
+  box-shadow: 0 5px 24px rgba(1, 1, 1, 0.1);
+  width: 350px;
+  padding-right: 100px;
+  outline: none;
+}
+
+input[type="submit"] {
+  border-radius: 20px;
+  height: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-width: 0;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  right: 125px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0a4bad;
+}
+
+#current-location-button {
+  border-radius: 20px;
+  height: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-color: #000;
+  background-color: transparent;
+  color: #000;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+#current-location-button:hover {
+  background-color: #ccc;
 }
 
 .days {
